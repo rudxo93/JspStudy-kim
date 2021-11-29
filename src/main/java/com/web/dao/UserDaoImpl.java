@@ -43,5 +43,42 @@ public class UserDaoImpl implements UserDao {
 		
 		return name;
 	}
+	
+	@Override
+	public int login(String id, String password) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		int flag = 0;
+		
+		try {
+			con = pool.getConnection();
+			sql = "SELECT\r\n"
+					+ "	COUNT(um.user_id),\r\n"
+					+ "	COUNT(ud.user_password)\r\n"
+					+ "FROM\r\n"
+					+ "	user_mst um\r\n"
+					+ "	LEFT OUTER JOIN user_mst ud ON (ud.user_id= um.user_id AND um.user_password = ?)\r\n"
+					+ "WHERE\r\n"
+					+ "	um.user_id = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, password);
+			pstmt.setString(2, id);
+			rs = pstmt.executeQuery();
+			rs.next();
+			flag = rs.getInt(1) + rs.getInt(2); // 플래그를 더했을떄 0 이면 아이디 없음 / 1이면 비밀번호 불일치 / 2면 로그인성공
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			
+		}
+		
+		
+		return flag;
+	}
 
 }

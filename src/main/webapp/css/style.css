@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    
+}
+.naver{
+    display: flex;
+    background-color: beige ;
+    justify-content: space-between;
+    align-content: center;
+    padding: 8px 12px;
+}
+
+.naver_title {
+    position: absolute;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    color: greenyellow;
+    top: -30px;
+    width: 138px;
+}
+
+.jungol_menu{
+   display: flex;
+    font-size: 14px;
+    font-weight: bold;
+    list-style: none;
+    padding-left: 0;
+}
+
+.jungol_menu li{
+    padding: 8px 12px;
+}
+
+
+.jungol_login{
+    display: flex;
+    font-size: 16px;
+    font-weight: bold;
+    list-style: none;
+    padding-right: 0;
+}
+
+.jungol_login li{
+    padding: 8px 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .jungol{
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .jungol_menu{
+        flex-direction: column;
+    }
+}
