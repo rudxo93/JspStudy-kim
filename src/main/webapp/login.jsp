@@ -39,7 +39,7 @@
                 	</div>
                 	<div class="card-footer bg-transparent border-gray d-flex justify-content-center">
                     	<a href="" class="nav-link">비밀번호 찾기</a> <a href="" class="nav-link">회원가입</a>
-               		</div>
+               		</div> 
             	</form>
             </div>
         </main>

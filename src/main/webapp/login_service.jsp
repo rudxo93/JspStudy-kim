@@ -6,7 +6,7 @@
 	UserDao userDao = new UserDaoImpl();
 %>
 <%
-	// request = 요청 
+	// request = 요청  
 	String id = request.getParameter("id");
 	String password = request.getParameter("password");
 	String msg = null;
