@@ -20,14 +20,14 @@ public class UserDaoImpl implements UserDao {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = null;
-		String name = null;
+		String sql = null;  // 쿼리문 담을 변수
+		String name = null;  // 결과 전달
 		
 		try { 
 			con = pool.getConnection();  // 풀장에서 튜브 1개 대여
 			sql = "select user_email from user_mst where user_id = ? and user_password = ?"; // 쿼리문 작성 ? 에는 입력한 데이터가 들어간다.
 			pstmt = con.prepareStatement(sql);  // 쿼리문을 매개변수로 받는다.
-			pstmt.setString(1, id);  // id  -> ?에 문자열 String을 set 해준다.
+			pstmt.setString(1, id);  // id  -> spl의 ? 미완성 쿼리문에 set 한다
 			pstmt.setString(2, password);  // password
 			rs = pstmt.executeQuery(); // 쿼리를 실행하고 완성된 pstmt를 rs에 담는다.
 			
@@ -70,14 +70,11 @@ public class UserDaoImpl implements UserDao {
 			rs.next();
 			flag = rs.getInt(1) + rs.getInt(2); // 플래그를 더했을떄 0 이면 아이디 없음 / 1이면 비밀번호 불일치 / 2면 로그인성공
 			
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			
-		}
-		
-		
+			pool.freeConnection(con, pstmt, rs); // 튜브 반납
+		}	
 		return flag;
 	}
 

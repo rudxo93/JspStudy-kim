@@ -19,8 +19,8 @@
 		if(pwd.equals(testPwd)){
 %>
 			<jsp:forward page="index2.jsp">  <!-- forward 자체가 요청 요청을 보낼때 파라미터를 추가해서 보낸다. -->
-				<jsp:param value="김경태" name="name"/>
-				<jsp:param value="010-2901-0830" name="phone"/>
+				<jsp:param value="김일" name="name"/>
+				<jsp:param value="010-1234-5678" name="phone"/>
 			</jsp:forward>
 <%
 		}else {

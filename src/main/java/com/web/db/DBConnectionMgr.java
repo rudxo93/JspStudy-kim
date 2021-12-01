@@ -40,7 +40,7 @@ public class DBConnectionMgr {
 
     private Vector connections = new Vector(10);
     private String _driver = "org.mariadb.jdbc.Driver",
-    _url = "jdbc:mysql://127.0.0.1:8001/webStudy?useUnicode=true&characterEncoding=UTF-8",
+    _url = "jdbc:mysql://127.0.0.1:8001/webstudy?useUnicode=true&characterEncoding=UTF-8",
     _user = "root",
     _password = "toor";
     
