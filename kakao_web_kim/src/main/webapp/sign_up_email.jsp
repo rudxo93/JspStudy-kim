@@ -32,7 +32,7 @@
                         <h2>카카오계정 가입을 위해<br>
                             사용하실 이메일을 입력해 주세요.</h2>
                         <div class="item_tf">
-                            <input type="text" class="item_ip" placeholder="이메일 입력" name="id">
+                            <input type="text" class="item_ip" placeholder="이메일 입력" name="id" autofocus="autofocus">
                             <div class="util_tf">
                                 <label class="txt_email">@ kakao.com</label>
                             </div>

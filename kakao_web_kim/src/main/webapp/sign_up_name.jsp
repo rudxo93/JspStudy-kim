@@ -4,6 +4,7 @@
 <html lang="ko">
 
 <%
+	request.setCharacterEncoding("UTF-8");
 	String id = request.getParameter("id");
 	String password = request.getParameter("password");
 	String repassword = request.getParameter("repassword");
@@ -34,7 +35,7 @@
                         <h2>카카오계정 가입을 위해<br>
                             이름을 입력해 주세요.</h2>
                         <div class="item_tf">
-                            <input type="text" class="item_ip" name="name" placeholder="이름 입력">
+                            <input type="text" class="item_ip" name="name" placeholder="이름 입력" autofocus="autofocus">
                         </div>
                         <div class="item_msg">
                         	<span class="msg1">필수 항목입니다.</span>

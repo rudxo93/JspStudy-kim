@@ -4,11 +4,13 @@
 <html lang="ko">
 
 <%
+	request.setCharacterEncoding("UTF-8");
 	String id = request.getParameter("id");
 	String password = request.getParameter("password");
 	String repassword = request.getParameter("repassword");
 	String name = request.getParameter("name");
-	String flag = request.getParameter("flag") == null ? "0" : request.getParameter("flag");
+	String phone = request.getParameter("phone");
+	String flag = request.getParameter("flag") == null ? "3" : request.getParameter("flag");
 %>
 
 <head>
@@ -31,6 +33,7 @@
                     	<input type="hidden" id="password" name="password" value="<%=password %>">
                     	<input type="hidden" id="repassword" name="repassword" value="<%=repassword %>">
                     	<input type="hidden" id="name" name="name" value="<%=name %>">
+                    	<input type="hidden" id="phone" value="<%=phone %>">
                     	<input type="hidden" id="flag" name="flag" value="<%=flag %>">
                     	<input type="hidden" id="submit_flag" name="submit_flag" value="0">
                         <div class="navigation_wrap">
@@ -39,7 +42,7 @@
                         <h2>카카오계정 가입을 위해<br>
                             휴대폰 인증을 진행해 주세요.</h2>
                         <div class="item_tf">
-                            <input type="tel" class="item_ip" name="phone" placeholder="전화번호 입력">
+                            <input type="tel" class="item_ip" name="phone"  placeholder="전화번호 입력" autofocus="autofocus">
                             <div class="util_tf">
                                 <button type="button" class="button_round">인증요청</button>
                             </div>
@@ -47,7 +50,8 @@
                         <div class="item_msg">
                         	<span class="msg1">필수 항목입니다.</span>
                         	<span class="msg2">이미 가입된 연락처입니다.</span>
-                        	<span class="msg2">인증실패. 연락처를 다시 확인해주세요.</span>
+                        	<span class="msg3">인증실패. 연락처를 다시 확인해주세요.</span>
+                        	<span class="msg4">인증성공.</span>
                         </div>
                         <div class="confirm_btn">
                             <button type="button" class="btn_g">마침</button>
@@ -58,6 +62,7 @@
             <jsp:include page="sign_up_include/sign_up_footer.jsp"></jsp:include>
         </div>
     </div>
+    <script type="text/javascript" src="js/sign_up_phone.js"></script>
 </body>
 
 </html>

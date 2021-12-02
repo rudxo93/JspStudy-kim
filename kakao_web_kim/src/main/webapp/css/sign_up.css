@@ -90,6 +90,11 @@ progress {
 	display: none;
 }
 
+.item_msg .msg4{
+	color: green;
+	display: none;
+}
+
 .util_tf {
     position: absolute;
     height: 100%;
