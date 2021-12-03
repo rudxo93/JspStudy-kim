@@ -1,25 +1,50 @@
-.container {
-    margin: 0px auto;
-    padding-top: 30px;
-    width: 80%;
-    box-sizing: border-box;
+header {
+    text-align: center;
+}
+
+.brand_logo {
+    margin: 0px 0px 30px 0px;
+    display: inline-block;
+    font-weight: 500;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    padding-top: 100px;
-}
-
-.mypage-content {
     border: 1px solid #e5e5e5;
-    padding: 50px 195px;
+    padding: 0px 69px 0px;
 }
 
-.mypage-items {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.warp_form {
+    box-sizing: border-box;
+    padding: 55px 0px 50px;
+}
+.navigation_wrap {
+    margin: 0px 0px 32px;
+}
+
+progress {
+    -webkit-appearance: none;
+}
+
+::-webkit-progress-bar {
+    /* height: 4px; */
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: #e5e5e5;
+    height: 4px;
+    width: 60px;
+}
+
+::-webkit-progress-value {
+    background-color: #252525;
+    border-radius: 4px;
+}
+
+.warp_form h2 {
+    margin: 0px;
+    padding: 0px 0px 49px;
+    font-size: 1.4em;
+    font-weight: 400;
 }
 
 .item_tf {
@@ -31,7 +56,6 @@ main {
     width: 440px;
     height: 48px;
     position: relative;
-    margin: 0px 0px 10px;
 }
 
 .item_ip {
@@ -44,11 +68,6 @@ main {
     cursor: pointer;
 }
 
-.item_lb {
-    font-size: 18px;
-    color: #191919;
-}
-
 ::placeholder {
     font-weight: 600;
     color: #aaaaaa
@@ -59,15 +78,19 @@ main {
 	color: red;
 }
 
-.item_msg .msg1 {
+.item_msg .msg1{
 	display: none;
 }
 
-.item_msg .msg2 {
+.item_msg .msg2{
 	display: none;
 }
 
-.item_msg .msg3 {
+.item_msg .msg3{
+	display: none;
+}
+
+.item_msg .msg4{
 	color: green;
 	display: none;
 }
@@ -77,6 +100,12 @@ main {
     height: 100%;
     right: 0px;
     top: 0px;
+}
+
+.txt_email {
+    display: block;
+    margin: 11px 0px 0px;
+    font-size: 18px;
 }
 
 .button_round {

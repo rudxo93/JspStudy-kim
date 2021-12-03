@@ -25,7 +25,7 @@
 <body>
     <div class="container">
         <div class="inner_container">
-            <jsp:include page="sign_up_include/sign_up_header.jsp"></jsp:include>
+            <jsp:include page="include/sign_up_include/sign_up_header.jsp"></jsp:include>
             <main>
                 <div class="warp_form">
                     <form action="sign_up_check.jsp" method="post">
@@ -59,7 +59,7 @@
                     </form>
                 </div>
             </main>
-            <jsp:include page="sign_up_include/sign_up_footer.jsp"></jsp:include>
+            <jsp:include page="include/sign_up_include/sign_up_footer.jsp"></jsp:include>
         </div>
     </div>
     <script type="text/javascript" src="js/sign_up_phone.js"></script>

@@ -1,3 +1,10 @@
+.container {
+    margin: 0px auto;
+    padding-top: 30px;
+    width: 1296px;
+    box-sizing: border-box;
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
@@ -19,9 +26,7 @@
     justify-content: center;
     align-items: center;
     padding: 0px;
-    width: 532px;
     list-style: none;
-    flex-wrap: nowrap;
 }
 
 .nav_item a {
@@ -54,4 +59,4 @@
 
 .nav_user a:hover {
     color: darkgray;
-}
+} 
