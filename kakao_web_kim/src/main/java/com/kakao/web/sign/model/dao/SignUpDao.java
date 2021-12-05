@@ -1,6 +1,6 @@
-package com.kakao.web.dao;
+package com.kakao.web.sign.model.dao;
 
-import com.kakao.web.dto.UserDto;
+import com.kakao.web.sign.model.dto.UserDto;
 
 public interface SignUpDao {
 	

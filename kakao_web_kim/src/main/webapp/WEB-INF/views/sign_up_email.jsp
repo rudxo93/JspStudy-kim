@@ -3,12 +3,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<%
-	String id = request.getParameter("id");
-	String flag = request.getParameter("flag"); // id와 flag받는다.
-	
-%>
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,8 +18,9 @@
             <jsp:include page="include/sign_up_include/sign_up_header.jsp"></jsp:include>
             <main>
                 <div class="warp_form">
-                	<input type="hidden" id="flag" value="<%=flag %>">
-                    <form action="sign_up_password.jsp" method="post">
+                	<input type="hidden" id="flag" value="<%=request.getAttribute("flag") %>">
+                    <form action="signUp" method="post">
+                		<input type="hidden" name="submit_status" value="email">
                         <div class="navigation_wrap">
                             <progress class="bar_navigation" value="20" max="100"></progress>
                         </div>
@@ -39,7 +34,7 @@
                         </div>
                         <div class="item_msg">
                         	<span class="msg1">필수 항목입니다.</span>
-                        	<span class="msg2"><%=id %>(은)는 이미 존재하는 아이디입니다.</span>
+                        	<span class="msg2"><%=request.getAttribute("id") %>(은)는 이미 존재하는 아이디입니다.</span>
                         </div>
                         <div class="confirm_btn">
                             <button type="button" class="btn_g">다음</button>

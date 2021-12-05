@@ -3,13 +3,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<%
-	request.setCharacterEncoding("UTF-8");
-	String id = request.getParameter("id");
-	String password = request.getParameter("password");
-	String repassword = request.getParameter("repassword");
-%>
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,10 +18,10 @@
             <jsp:include page="include/sign_up_include/sign_up_header.jsp"></jsp:include>
             <main>
                 <div class="warp_form">
-                    <form action="sign_up_phone.jsp" method="post">
-                    	<input type="hidden" name="id" value="<%=id %>">
-                    	<input type="hidden" id="password" name="password" value="<%=password %>">
-                    	<input type="hidden" id="repassword" name="repassword" value="<%=repassword %>">
+                    <form action="signUp" method="post">
+                    	<input type="hidden" name="submit_status" value="name">
+                    	<input type="hidden" name="id" value="<%=request.getParameter("id") %>">
+                    	<input type="hidden" name="password" value="<%=request.getParameter("password") %>">
                         <div class="navigation_wrap">
                             <progress class="bar_navigation" value="80" max="100"></progress>
                         </div>

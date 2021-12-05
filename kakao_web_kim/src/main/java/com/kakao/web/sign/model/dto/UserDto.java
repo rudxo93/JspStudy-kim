@@ -1,4 +1,4 @@
-package com.kakao.web.dto;
+package com.kakao.web.sign.model.dto;
 
 public class UserDto {
 

@@ -1,4 +1,4 @@
-package com.kakao.web.controller;
+package com.kakao.web.index.controller;
 
 import java.io.IOException;
 

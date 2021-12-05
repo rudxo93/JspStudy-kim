@@ -1,6 +1,6 @@
-<%@page import="com.kakao.web.dto.UserDto"%>
-<%@page import="com.kakao.web.dao.SignUpDaoImpl"%>
-<%@page import="com.kakao.web.dao.SignUpDao"%>
+<%@page import="com.kakao.web.sign.model.dto.UserDto"%>
+<%@page import="com.kakao.web.sign.model.dao.SignUpDaoImpl"%>
+<%@page import="com.kakao.web.sign.model.dao.SignUpDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%

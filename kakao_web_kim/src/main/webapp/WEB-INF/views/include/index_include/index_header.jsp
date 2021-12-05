@@ -10,8 +10,8 @@
 			<a href=""><li>약속과 책임</li></a>
 		</ul>
 		<ul class="nav_user">
-			<a href="sign_in.jsp"><li><i class="fas fa-user"></i></li></a>
-			<a href="sign_up_email.jsp"><li><i class="fas fa-user-plus"></i></li></a>
+			<a href="signIn"><li><i class="fas fa-user"></i></li></a>
+			<a href="signUp"><li><i class="fas fa-user-plus"></i></li></a>
 		</ul>
 	</div>
 </header>
