@@ -24,9 +24,7 @@ public class Index extends HttpServlet {
 		request.setCharacterEncoding("UTF-8"); // 기본세팅
 		
 		request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response); // index.jsp 파일을 열겠다!
-//		request.getRequestDispatcher("index.jsp").include(request, response);
 		
-//		response.sendRedirect("index.jsp");
 	}
 
 }

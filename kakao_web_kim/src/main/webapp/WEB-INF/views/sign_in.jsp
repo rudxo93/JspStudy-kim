@@ -5,23 +5,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<%
-	String submit_flag = request.getParameter("submit_flag") == null ? "0" : request.getParameter("submit_flag");
-	String login_id = request.getParameter("login_id");
-	String login_password = request.getParameter("login_password");
-	int flag = 3;
-	if(submit_flag.equals("1")){
-		SignInDao signInDao = new SignInDaoImpl();
-		
-		flag = signInDao.signIn(login_id, login_password);
-		if(flag == 2){ // 로그인 성공
-%>
-			<jsp:forward page="index.jsp"></jsp:forward>
-<%
-		}
-	}
-	
-%>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,11 +29,10 @@
                 </div>
                 <div class="warp_form">
                     <h1 class="brand_logo">kakao</h1>
-                    <form action="sign_in.jsp" method="post">
-                    	<input type="hidden" id="submit_flag" name="submit_flag" value="<%=submit_flag %>">
-                    	<input type="hidden" id="flag" value="<%=flag %>">
-                    	<input type="hidden" id="return_id" value="<%=login_id %>">
-                    	<input type="hidden" id="return_password" value="<%=login_password %>">
+                    <form action="signIn" method="post">
+                    	<input type="hidden" id="flag" value="<%=request.getAttribute("flag") %>">
+                    	<input type="hidden" id="return_id" value="<%=request.getAttribute("login_id") %>">
+                    	<input type="hidden" id="return_password" value="<%=request.getAttribute("login_password") %>">
                         <div class="item_tf">
                             <input type="email" class="item_ip" name="login_id" placeholder="카카오메일 아이디, 이메일, 전화번호">
                             <div class="util_tf">                          

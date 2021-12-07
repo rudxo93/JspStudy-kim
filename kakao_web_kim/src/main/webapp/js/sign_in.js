@@ -23,7 +23,6 @@ item_ip[0].onblur = () => {
 }
 
 const btn_login = document.querySelector('.btn_login');
-const submit_flag = document.querySelector('#submit_flag');
 const msg1 = document.querySelector('.msg1');
 const msg2 = document.querySelector('.msg2');
 const msg3 = document.querySelector('.msg3');
@@ -53,8 +52,21 @@ if(flag.value == 0){ // 아이디도 존재하지 않는것
 	item_ip[1].focus();
 }
 
+item_ip[0].onkeypress = () => {
+	if (window.event.keyCode == 13) {  // keycode 13 = enter
+		window.event.preventDefault(); // 기본으로 내장되어 있는 이벤트를 죽인다.
+		item_ip[1].focus();
+	}
+}
+
+item_ip[1].onkeypress = () => {
+	if (window.event.keyCode == 13) {  // keycode 13 = enter
+		window.event.preventDefault(); // 기본으로 내장되어 있는 이벤트를 죽인다.
+		onSubmit();
+	}
+}
+
 btn_login.onclick = () => {
-	submit_flag.value = '1';
 	onSubmit();
 }
 
