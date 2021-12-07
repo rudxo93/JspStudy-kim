@@ -1,5 +1,6 @@
 package com.kakao.web.notice.model.dto;
 
+// 13일차 수업복습임
 public class Notice {
 	
 	private int index;
