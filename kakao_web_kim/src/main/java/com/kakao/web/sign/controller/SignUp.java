@@ -42,18 +42,34 @@ public class SignUp extends HttpServlet {
 				request.setAttribute("flag", flag);
 				request.getRequestDispatcher("WEB-INF/views/sign_up_email.jsp").forward(request, response);
 			} else { // 존재하지 않는 경우
+				// 비밀번호
 				request.getRequestDispatcher("WEB-INF/views/sign_up_password.jsp").forward(request, response); // 다음 페이지로 넘기기
 			}
 		} else if(submitStatus.equals("password")) { // 어차피 js에서 넘긴다
+			// 비밀번호 확인
+			request.setAttribute("id", request.getParameter("id"));
+			request.setAttribute("password", request.getParameter("password"));
 			request.getRequestDispatcher("WEB-INF/views/sign_up_repassword.jsp").forward(request, response);
 			
 		} else if(submitStatus.equals("repassword")) {
+			// 이름
+			request.setAttribute("id", request.getParameter("id"));
+			request.setAttribute("password", request.getParameter("password"));
 			request.getRequestDispatcher("WEB-INF/views/sign_up_name.jsp").forward(request, response);
 			
 		} else if(submitStatus.equals("name")) {
+			// 전화번호
+			request.setAttribute("id", request.getParameter("id"));
+			request.setAttribute("password", request.getParameter("password"));
+			request.setAttribute("name", request.getParameter("name"));
 			request.getRequestDispatcher("WEB-INF/views/sign_up_phone.jsp").forward(request, response);
 			
 		} else if(submitStatus.equals("phone")) {
+			// 전화번호 인증요청, 마침버튼
+			request.setAttribute("id", request.getParameter("id"));
+			request.setAttribute("password", request.getParameter("password"));
+			request.setAttribute("name", request.getParameter("name"));
+			request.setAttribute("phone", request.getParameter("phone"));
 			String submitFlag = request.getParameter("submit_flag");
 			
 			if(submitFlag.equals("1")) { //flag가 1이라면? 가입요청(마침 버튼)

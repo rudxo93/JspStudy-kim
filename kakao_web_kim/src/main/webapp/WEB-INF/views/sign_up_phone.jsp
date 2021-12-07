@@ -20,11 +20,11 @@
                 <div class="warp_form">
                     <form action="signUp" method="post">
                     	<input type="hidden" name="submit_status" value="phone">
-                    	<input type="hidden" name="id" value="<%=request.getParameter("id") %>">
-                    	<input type="hidden" name="password" value="<%=request.getParameter("password") %>">
-                    	<input type="hidden" id="name" name="name" value="<%=request.getParameter("name") %>">
-                    	<input type="hidden" id="phone" value="<%=request.getParameter("phone") %>">
-                    	<input type="hidden" id="flag" name="flag" value="<%=request.getAttribute("flag") %>">
+                    	<input type="hidden" name="id" value="${id }">
+                    	<input type="hidden" name="password" value="${password }">
+                    	<input type="hidden" id="name" name="name" value="${name }">
+                    	<input type="hidden" id="phone" value="${phone }">
+                    	<input type="hidden" id="flag" name="flag" value="${flag }">
                     	<input type="hidden" id="submit_flag" name="submit_flag" value="0">
                         <div class="navigation_wrap">
                             <progress class="bar_navigation" value="100" max="100"></progress>

@@ -20,7 +20,7 @@
                 <div class="warp_form">
                     <form action="signUp" method="post">
                     	<input type="hidden" name="submit_status" value="password">
-                    	<input type="hidden" id="id" name="id" value="<%=request.getAttribute("id") %>">
+                    	<input type="hidden" id="id" name="id" value="${id }">
                         <div class="navigation_wrap">
                             <progress class="bar_navigation" value="40" max="100"></progress>
                         </div>

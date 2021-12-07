@@ -20,8 +20,8 @@
                 <div class="warp_form">
                     <form action="signUp" method="post">
                     	<input type="hidden" name="submit_status" value="repassword">
-                    	<input type="hidden" name="id" value="<%=request.getParameter("id") %>">
-                    	<input type="hidden" id="password" name="password" value="<%=request.getParameter("password") %>">
+                    	<input type="hidden" name="id" value="${id }">
+                    	<input type="hidden" id="password" name="password" value="${password }">
                         <div class="navigation_wrap">
                             <progress class="bar_navigation" value="60" max="100"></progress>
                         </div>

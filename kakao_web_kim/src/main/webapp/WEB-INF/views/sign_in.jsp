@@ -30,9 +30,9 @@
                 <div class="warp_form">
                     <h1 class="brand_logo">kakao</h1>
                     <form action="signIn" method="post">
-                    	<input type="hidden" id="flag" value="<%=request.getAttribute("flag") %>">
-                    	<input type="hidden" id="return_id" value="<%=request.getAttribute("login_id") %>">
-                    	<input type="hidden" id="return_password" value="<%=request.getAttribute("login_password") %>">
+                    	<input type="hidden" id="flag" value="${empty flag? 3: flag}">
+                    	<input type="hidden" id="return_id" value="${login_id }">
+                    	<input type="hidden" id="return_password" value="${login_password }">
                         <div class="item_tf">
                             <input type="email" class="item_ip" name="login_id" placeholder="카카오메일 아이디, 이메일, 전화번호">
                             <div class="util_tf">                          
@@ -55,7 +55,7 @@
                         	<span class="msg4">비밀번호가 일치하지 않습니다.</span>
                         </div>
                         <div class="item_chk">
-                            <input type="checkbox" class="item_cb"name="" id="chk">
+                            <input type="checkbox" class="item_cb"name="id_chk_status" id="chk">
                             <label class="chk_on" for="chk">
                                 <i class="far fa-check-circle"></i>
                             </label>
