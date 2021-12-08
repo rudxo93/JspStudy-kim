@@ -26,9 +26,6 @@ public class Index extends HttpServlet {
 		userService = new UserServiceImpl();
 	}
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setCharacterEncoding("UTF-8"); // 기본세팅
 		response.setContentType("text/html; charset=UTF-8"); // 기본세팅

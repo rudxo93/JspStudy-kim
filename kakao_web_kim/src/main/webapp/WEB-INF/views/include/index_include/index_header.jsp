@@ -7,7 +7,7 @@
 		<a href="" class="brand_logo"><h1>kakao</h1></a>
 		<ul class="nav_item">
 			<a href=""><li>카카오</li></a>
-			<a href=""><li>뉴스</li></a>
+			<a href="notice"><li>뉴스</li></a>
 			<a href=""><li>기술과 서비스</li></a>
 			<a href=""><li>약속과 책임</li></a>
 		</ul>

@@ -9,6 +9,7 @@
     <title>카카오</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/mainNav.css">
 </head>
 <body>
     <div class="container">
