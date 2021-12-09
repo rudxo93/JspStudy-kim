@@ -27,11 +27,11 @@ main li {
     border-collapse: collapse;
 }
 
-.notice_dtl_main {
+.notice_insert_main {
     width: 800px;
 }
 
-.nd_title_ul li input {
+.ni_title_ul li input {
     box-sizing: border-box;
     border: none;
     outline: none;
@@ -40,15 +40,15 @@ main li {
     padding: 0px 10px;
 }
 
-.nd_title_ul .nd_title_li {
+.ni_title_ul .ni_title_li {
     width: 200px;
 }
 
-.nd_info_ul li{
+.ni_info_ul li{
     width: 100%;
 }
 
-.nd_content_ul textarea {
+.ni_content_ul textarea {
     border-collapse: collapse;
     box-sizing: border-box;
     border: none;

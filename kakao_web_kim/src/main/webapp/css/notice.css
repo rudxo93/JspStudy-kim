@@ -63,6 +63,7 @@ main a {
 .notice_footer {
 	margin: 30px 0px 0px;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	width: 100%
