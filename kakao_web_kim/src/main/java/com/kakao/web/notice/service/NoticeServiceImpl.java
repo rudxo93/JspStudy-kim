@@ -63,4 +63,11 @@ public class NoticeServiceImpl implements NoticeService {
 		return 1;
 	}
 	
+	@Override
+	public NoticeDto getNotice(String code) {
+		int notice_code = Integer.parseInt(code);
+		NoticeDto noticeDto = noticeDao.getNotice(notice_code);
+		return noticeDto;
+	}
+	
 }

@@ -98,9 +98,57 @@ public class NoticeDaoImpl implements NoticeDao {
 		}
 		return result;
 	}
+	
+	@Override
+	public NoticeDto getNotice(int notice_code) {
+		Connection con = null;
+		Connection con2 = null;
+		PreparedStatement pstmt = null;
+		PreparedStatement pstmt2 = null;
+		ResultSet rs = null;
+		String sql = null;
+		NoticeDto noticeDto = null ;
+		
+		try {
+			con = pool.getConnection();
+			con2 = pool.getConnection();
+			
+			sql = "update notice_mst set notice_count = notice_count + 1 where notice_code = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, notice_code);
+			pstmt.executeUpdate();
+			
+            sql = "select nm.notice_code, nm.notice_title, nd.notice_content, nm.notice_writer, nm.notice_date, nm.notice_count, "
+                    + "min(nn.notice_code), min(nn.notice_title), max(np.notice_code), max(np.notice_title) from "
+                    + "notice_mst nm left outer join notice_dtl nd on(nd.notice_code = nm.notice_code) "
+                    + "left outer join (select notice_code, notice_title from notice_mst) nn on(nn.notice_code > nm.notice_code) "
+                    + "left outer join (select notice_code, notice_title from notice_mst) np on(np.notice_code < nm.notice_code) "
+                    + "where nm.notice_code = ?";
+			pstmt2 = con2.prepareStatement(sql);
+			pstmt2.setInt(1, notice_code);
+			rs = pstmt2.executeQuery();
+			
+			rs.next();
+            noticeDto = new NoticeDto();
+            noticeDto.setNotice_code(rs.getInt(1));
+            noticeDto.setNotice_title(rs.getString(2));
+            noticeDto.setNotice_content(rs.getString(3));
+            noticeDto.setNotice_writer(rs.getString(4));
+            noticeDto.setNotice_date(rs.getDate(5).toString());
+            noticeDto.setNotice_count(rs.getInt(6));
+            noticeDto.setNextNotice_code(rs.getInt(7));
+            noticeDto.setNextNotice_title(rs.getString(8));
+            noticeDto.setPreNotice_code(rs.getInt(9));
+            noticeDto.setPreNotice_title(rs.getString(10));
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+			pool.freeConnection(con2, pstmt2);
+		}
+		
+		return noticeDto;
+	}
 }
-
-
-
-
 

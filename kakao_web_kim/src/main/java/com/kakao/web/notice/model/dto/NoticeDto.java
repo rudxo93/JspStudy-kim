@@ -1,4 +1,4 @@
-package com.kakao.web.notice.model.dto;
+ package com.kakao.web.notice.model.dto;
 
 public class NoticeDto {
 	
@@ -9,6 +9,10 @@ public class NoticeDto {
 	private String notice_date;
 	private int notice_count;
 	private String notice_content;
+	private int preNotice_code; // 이전글 코드
+	private String preNotice_title;
+	private int nextNotice_code; // 다음글 코드
+	private String nextNotice_title;
 	
 	public int getIndex() {
 		return index;
@@ -52,13 +56,40 @@ public class NoticeDto {
 	public void setNotice_content(String notice_content) {
 		this.notice_content = notice_content;
 	}
-	
+	public int getPreNotice_code() {
+		return preNotice_code;
+	}
+	public void setPreNotice_code(int preNotice_code) {
+		this.preNotice_code = preNotice_code;
+	}
+	public String getPreNotice_title() {
+		return preNotice_title;
+	}
+	public void setPreNotice_title(String preNotice_title) {
+		this.preNotice_title = preNotice_title;
+	}
+	public int getNextNotice_code() {
+		return nextNotice_code;
+	}
+	public void setNextNotice_code(int nextNotice_code) {
+		this.nextNotice_code = nextNotice_code;
+	}
+	public String getNextNotice_title() {
+		return nextNotice_title;
+	}
+	public void setNextNotice_title(String nextNotice_title) {
+		this.nextNotice_title = nextNotice_title;
+	}
 	@Override
 	public String toString() {
 		return "NoticeDto [index=" + index + ", notice_code=" + notice_code + ", notice_title=" + notice_title
 				+ ", notice_writer=" + notice_writer + ", notice_date=" + notice_date + ", notice_count=" + notice_count
-				+ ", notice_content=" + notice_content + "]";
+				+ ", notice_content=" + notice_content + ", preNotice_code=" + preNotice_code + ", preNotice_title="
+				+ preNotice_title + ", nextNotice_code=" + nextNotice_code + ", nextNotice_title=" + nextNotice_title
+				+ "]";
 	}
+
+	
 
 	
 }

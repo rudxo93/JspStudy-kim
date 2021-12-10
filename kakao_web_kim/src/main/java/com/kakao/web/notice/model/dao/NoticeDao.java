@@ -8,5 +8,6 @@ public interface NoticeDao {
 
 	public List<NoticeDto> getNoticeAll();
 	public int insertNotice(NoticeDto noticeDto);
+	public NoticeDto getNotice(int notice_code);  // 게시물 가져오기
 	
 }
