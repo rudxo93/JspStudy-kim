@@ -17,6 +17,7 @@
         <jsp:include page="include/index_include/index_header.jsp"></jsp:include>
         <main>
             <div class="notice_dtl_main">
+            	<input type="hidden" id="notice_code" name="notice_code" value="${notice.notice_code }">
                 <ul class="nd_header_ul">
                     <li>${notice.notice_title }</li>
                 </ul>
@@ -37,8 +38,15 @@
             <div class="notice_dtl_footer">
                 <div class="nd_footer_buttons">
                     <button type="button" class="notice_list_button">목록</button>
-                    <button type="button" class="notice_update_button">수정</button>
-                    <button type="button" class="notice_delete_button">삭제</button>
+                    
+                    <c:set var="admin_id" value="admin"></c:set>
+            		<c:set var="admin_user" value="${login_user.id }"></c:set>
+            	
+            		<c:if test="${admin_id eq admin_user}"> <!-- admin이라면 수정과 삭제 버튼을 보여준다. -->
+                    	<button type="button" class="notice_update_button">수정</button>
+                    	<button type="button" class="notice_delete_button">삭제</button>
+                    </c:if>
+                    
                 </div>
                 <div class="nd_footer_pre_next">
                 	<ul class="nd_footer_next">
@@ -61,5 +69,6 @@
         </footer>
     </div>
     <script src="https://kit.fontawesome.com/c3df4d7d1c.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/notice_dtl.js"></script>
 </body>
 </html>
