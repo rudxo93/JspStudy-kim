@@ -1,16 +1,16 @@
 const item_ips = document.querySelectorAll('.item_ip');
-const user_email = document.querySelector('#user_email');
-const user_name = document.querySelector('#user_name');
+const user_email = document.querySelector('#user_email'); // hidden
+const user_name = document.querySelector('#user_name');  // hidden
 const msg1 = document.querySelectorAll('.msg1');
 
 
-item_ips[0].onblur = () => {
+item_ips[0].onblur = () => {  // password에서 onblur
     if(item_ips[0].value.length != 0){
         checkPassword(user_email.value, item_ips[0].value);
     }
 }
 
-item_ips[1].onblur = () => {
+item_ips[1] = () => {
     if(item_ips[0].value.length != 0 && item_ips[0].value != item_ips[1].value){
         msg1[1].style.display = 'block';
     }else{
