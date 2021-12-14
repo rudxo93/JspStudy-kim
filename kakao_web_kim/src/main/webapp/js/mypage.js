@@ -76,7 +76,7 @@ function checkPassword(id,password){
 
 const button_round = document.querySelector('.button_round');
 button_round.onclick = () => {
-	if(item_ips[2].value.length == 0){
+	if(item_ips[2].value.length == 0){ // 전화번호 입력이 비어있다면 기존에 사용중이던 전화번호 넣어주기
 		item_ips[2].value = $("#user_phone").val();
 	}
 	
@@ -86,13 +86,13 @@ button_round.onclick = () => {
 	};
 	
 	$.ajax({
-		type:"get",
-		url:"phone-number-check",
+		type:"get",  // get 방식
+		url:"phone-number-check",  // mapping 주소
 		data: {
 			phoneInfo:JSON.stringify(phoneInfo)
 		},
-		dataType: "text",
-		success: function(data){
+		dataType: "text",  // 응답받을 데이터 타입
+		success: function(data){  // 성공시
 			phoneNumberCheckFlag = data;
 			const msg2 = document.querySelector('.msg2');
 			const msg3 = document.querySelector('.msg3');
@@ -103,12 +103,12 @@ button_round.onclick = () => {
 			if(data == 0){
 				msg2.style.display = 'block';
 			}else if(data == 2){
-				msg1[2].style.display = 'block';
+				msg1[2].style.display = 'block'; 
 			}else if(data == 1){
 				msg3.style.display = 'block';
 			}
 		},
-		error: function(){
+		error: function(){ // 실패시
 			
 		}
 	})
@@ -118,25 +118,25 @@ button_round.onclick = () => {
 const btn_g = document.querySelector('.btn_g');
 btn_g.onclick = () => {
 	const form = document.querySelector('form');
-	if(password_flag.value == 1 && repassword_flag.value == 1){
-		if(item_ips[2].value.length != 0){
-			if(phoneNumberCheckFlag == 1){
+	if(password_flag.value == 1 && repassword_flag.value == 1){ // 비밀번호 정상적으로 바뀐경우
+		if(item_ips[2].value.length != 0){ // 전화번호 인증 관련 / 전화번호 입력이 비어있지 않다면 
+			if(phoneNumberCheckFlag == 1){   // 전화번호도 정상적으로 바뀌었는지 확인
 				form.submit();
 			}
-		}else{
-			phoneNumberCheckFlag = 3;
-			item_ips[2].value = $("#user_phone").val();
+		}else{ // 전화번호 입력이 비었다면
+			phoneNumberCheckFlag = 3;  // 인증까지 다 했는데 전화번호를 바꾸기 싫어서 지웠을 경우를 대비해서
+			item_ips[2].value = $("#user_phone").val(); // 기존에 사용중이던 번호 넣어주기
 			form.submit();
 		}
-		
-	}else if(password_flag.value == 2 && repassword_flag.value == 2){
+		// 비밀번호가 비어있는 경우, 비밀번호를 수정하지 않았을 경우
+	}else if(password_flag.value == 2 && repassword_flag.value == 2){ // 전화번호를 무조건 입력했었어야 한다
 		const user_password = document.querySelector('#user_password');
 		item_ips[0].value = user_password.value;
 		if(item_ips[2].value.length != 0){
 			if(phoneNumberCheckFlag == 1){
 				form.submit();
 			}
-		}else{
+		}else{ // 전화번호와 비밀번호를 수정하지 않았을 경우
 			phoneNumberCheckFlag = 3;
 			item_ips[2].value = $("#user_phone").val();
 			alert('수정 할 회원 정보가 없습니다.')

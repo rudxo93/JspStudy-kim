@@ -49,7 +49,9 @@ public class UserInfoDaoImpl implements UserInfoDao {
 		
 		try {
 			con = pool.getConnection();
-			sql = "select count(pm.phone_number), count(um.user_phone) from phonenumber_list_mst pm left outer join user_mst um on(um.user_phone = pm.phone_number) where pm.phone_number = ? and pm.phone_user_name = ?";
+			sql = "select count(pm.phone_number), count(um.user_phone) "
+					+ "from phonenumber_list_mst pm left outer join user_mst um on(um.user_phone = pm.phone_number) "
+					+ "where pm.phone_number = ? and pm.phone_user_name = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, phone);
 			pstmt.setString(2, name);
